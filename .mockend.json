@@ -1,8 +1,26 @@
 {
-  "Search": {
-    "kitchen": "Kitchen"
-  },
   "Kitchen": {
-    "name": { "string": {} }
+    "name": { "string": {} },
+    "photo": {
+      "regexp": "https://picsum\\.photos/seed/[0-9]{5}/1920/270"
+    },
+    "desc": {
+      "loremWords": {
+        "minLength": 5,
+        "maxLength": 20
+      }
+    },
+    "tag": {
+      "string": ["one", "two", "three"]
+    },
+    "isDraft": {
+      "boolean": {}
+    },
+    "createdAt": {
+      "dateTime": {
+        "min": "2010-01-01T00:00:00Z",
+        "max": "2020-12-31T23:59:59Z"
+      }
+    }
   }
 }
