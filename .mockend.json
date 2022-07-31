@@ -10,6 +10,9 @@
     "photo": {
       "regexp": "https://picsum\\.photos/seed/[0-9]{5}/305/160"
     },
+    "favoriteCount": {
+      "int": { "min": 2, "max": 200 }
+    },
     "isPublished": {
       "boolean": {}
     },
@@ -35,7 +38,10 @@
       }
     },
     "price": {
-      "int": { "min": 2, "max": 1000 }
+      "int": { "min": 2, "max": 200 }
+    },
+    "favoriteCount": {
+      "int": { "min": 2, "max": 200 }
     },
     "photo": {
       "regexp": "https://picsum\\.photos/seed/[0-9]{5}/305/160"
