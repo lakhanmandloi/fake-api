@@ -1,21 +1,55 @@
 {
   "Kitchen": {
     "name": { "string": {} },
-    "photo": {
-      "regexp": "https://picsum\\.photos/seed/[0-9]{5}/1920/270"
-    },
     "desc": {
       "loremWords": {
         "minLength": 5,
         "maxLength": 20
       }
     },
-    "tag": {
-      "string": ["one", "two", "three"]
+    "photo": {
+      "regexp": "https://picsum\\.photos/seed/[0-9]{5}/305/160"
     },
-    "isDraft": {
+    "isPublished": {
       "boolean": {}
     },
+    "status": {
+      "string": ["approved", "rejected", "pending"]
+    },
+    "items": {
+      "hasMany": "Item"
+    },
+    "createdAt": {
+      "dateTime": {
+        "min": "2010-01-01T00:00:00Z",
+        "max": "2020-12-31T23:59:59Z"
+      }
+    }
+  },
+  "Item": {
+    "name": { "regexp": "[A-Z][a-z]{5,10}" },
+    "desc": {
+      "loremParagraphs": {
+        "minLength": 1,
+        "maxLength": 5
+      }
+    },
+    "price": {
+      "int": { "min": 2, "max": 1000 }
+    },
+    "photo": {
+      "regexp": "https://picsum\\.photos/seed/[0-9]{5}/305/160"
+    },
+    "cuisineType": {
+      "string": ["Indian", "Thai", "Italian", "French", "Japanese", "Chinese"]
+    },
+    "dietaryChoice": {
+      "string": ["Vegetarian", "Vegan", "Lactose Free", "Gluten Free"]
+    },
+    "isPublished": {
+      "boolean": {}
+    },
+    "kitchen": { "belongsTo": "Kitchen" },
     "createdAt": {
       "dateTime": {
         "min": "2010-01-01T00:00:00Z",
